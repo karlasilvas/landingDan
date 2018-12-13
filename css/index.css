@@ -1,0 +1,1379 @@
+main{
+	display: grid;
+	height: auto;
+	grid-gap: 0px 0px;
+	grid-template-areas: 
+		"header"
+		"about"
+		"profilepicture"
+		"instagram"
+		"dates"
+		"info"
+		"footer";
+	grid-template-columns: repeat(1, minmax(min-content, 1fr));
+	grid-template-rows: 1fr auto repeat(2, minmax(min-content, 1fr)) repeat(2, minmax(min-content, 300px)) 100px;
+}
+
+main > * {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/*Nombrar Areas*/
+header{
+	grid-area: header;
+	background-color: gray;
+}
+
+div:nth-child(2){
+	grid-area: about;
+}
+
+div:nth-child(3){
+	grid-area: profilepicture;
+}
+
+div:nth-child(4){
+	grid-area: instagram;
+}
+
+div:nth-child(5){
+	grid-area: dates;
+	background-color: #fadde5;
+}
+
+div:nth-child(6){
+	grid-area: info;
+	background-color: #fadde5;
+}
+
+footer{
+	grid-area: footer;
+	background-color: yellow;
+}
+
+/*Small phone from 100px to 273px*/
+@media only screen 
+   and (min-width : 100px) {
+   	main{
+   		grid-template-rows: 100px auto 500px 1fr repeat(2, minmax(min-content, 300px)) 100px;
+   	}
+
+   .header{
+		background-image: url(imagenes/headermin200.jpg);
+		height: 100px;
+	}
+
+
+	/*Descripción de Daniela y foto de ella*/
+	/*Foto de Daniela*/
+	.profilepic{
+		background: url(imagenes/dani300px.png);
+		height: 100%;
+		width: 100%;
+		background-repeat:no-repeat; 
+		background-position:center;
+		background-color: #f5f5f5;
+	}
+	/*Posiciones de Daniela Morga y su descripción*/
+	.title {
+		display: grid;
+		grid-gap: 5px;
+		height: 100%;
+		grid-template-columns: 1fr;
+		grid-template-rows: 80px 1fr;
+		grid-template-areas:
+			"danmor"
+			"descrip";
+		/*background-color: #fef1f8;*/
+	}
+	/*Texto Daniela Morga*/
+	.title >h1:nth-child(1){
+		display: flex;
+		grid-area: danmor;
+		font-size: 23px;
+		font-family: 'Dancing Script', cursive;
+		font-weight: bold;
+		text-overflow: center;
+		margin: auto;
+		align-items: flex-end;
+	}
+	/*Descripción Daniela Morga*/
+	.title > p{
+		grid-area: descrip;
+		display: flex;
+		font-family: raleway;
+		font-size: 10px;
+		margin: auto;
+		/*top, right, bottom, and left*/
+		line-height: 30px;
+		align-items: flex-start;
+		padding: 15px;
+	}
+
+
+	/*Instagram Daniela Morga*/
+	/*grid dónde esta el de instagram*/
+	.instagramtitle {
+		display: grid;
+		grid-gap: 5px;
+		height: 100%;
+		grid-template-columns: 1fr;
+		grid-template-rows: 50px 80px 1fr 80px;
+		grid-template-areas:
+			"titleinsta"
+			"linea"
+			"descripinsta"
+			"linfoot";
+	}
+
+	/*Instagram imagen superior*/
+	.instagramtitle >div:nth-child(1){
+		grid-area: linea;
+		background: url(imagenes/lineamobile.png);
+		display: block;
+		width: 150px;
+		height: 30px;
+		background-repeat: no-repeat;
+		margin: auto;
+	}
+	/*Instagram titulo*/
+	.instagramtitle >div:nth-child(2){
+		display: flex;
+		grid-area: titleinsta;
+		font-size: 23px;
+		font-family: 'Dancing Script', cursive;
+		font-weight: bold;
+		text-align: center;
+		text-overflow: center;
+		align-items: flex-end;
+		margin: auto;
+		/*top, right, bottom, and left*/
+	}
+	/*Daniela Morga Instagram*/
+	.instagramtitle > div:nth-child(3){
+		grid-area: descripinsta;
+		display: flex;
+	}
+	/*Instagram imagen inferior*/
+	.instagramtitle >div:nth-child(4){
+		grid-area: linfoot;
+		background: url(imagenes/lineamobile.png);
+		display: block;
+		width: 150px;
+		height: 30px;
+		background-repeat: no-repeat;
+		margin: auto;
+	}
+
+	/* Citas, cursos y ubicación*/
+	/*Grid dónde está la información*/
+	.infor{
+		display: grid;
+		height: 100%;
+		font-weight: bold;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: auto 50px auto;
+		grid-template-areas:
+			"makeyourdate makeyourdate"
+			"citas cursos"
+			"descitas descursos";
+	}
+	/*Fondo del grid*/
+	div:nth-child(6){
+		background-color: #ffffff;
+	}	
+	/*Título del grid*/
+	.infor > div:nth-child(1){
+		grid-area: makeyourdate;
+		font-weight: bold;
+		font-family: 'Dancing Script', cursive;
+		font-size: 23px;
+		margin: auto;
+		/*top, right, bottom, and left*/
+	}
+	/*Título citas*/
+	.infor > div:nth-child(2){
+		grid-area: citas;
+		font-weight: bolder;
+		font-family: raleway;
+		font-size: 18px;
+		margin-top: auto;
+		
+	}
+	/*Iconos del título*/
+	.infor > div img{
+		width: 18px;
+		height: 18px;
+		margin: 0px 10px 0px 10px;
+	}
+	/*Descripción de citas*/
+	.infor > div:nth-child(3){
+		grid-area: descitas;
+		font-family: raleway;
+		font-weight: lighter;
+		font-size: 10px;
+		align-content: flex-start;
+		margin: auto;
+		line-height: 25px;
+	}
+	/*Título cursos*/
+	.infor > div:nth-child(4){
+		grid-area: cursos;
+		font-weight: bold;
+		font-family: raleway;
+		font-size: 18px;
+		margin-top: auto;
+	}
+	/*Descripción de cursos*/
+	.infor > div:nth-child(5){
+		grid-area: descursos;
+		font-family: raleway;
+		font-weight: lighter;
+		font-size: 10px;
+		align-content: flex-start;
+		margin: auto;
+		line-height: 25px;
+	}
+
+	/*Grid dónde esta la ubicación y la foto del local*/
+	/*Foto del local*/
+	.contacto{
+		display: grid;
+		height: 100%;
+		font-weight: bold;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: auto 50px auto;
+		grid-template-areas:
+			"ubic ubic"
+			"contact contact"
+			"descontact pic";
+	}
+	/*Título del grid*/
+	.contacto > div:nth-child(1){
+		grid-area: ubic;
+		font-weight: bold;
+		font-family: 'Dancing Script', cursive;
+		font-size: 23px;
+		margin: auto;
+		/*top, right, bottom, and left*/
+	}
+	/*Título citas*/
+	.contacto > div:nth-child(2){
+		grid-area: contact;
+		font-family: raleway;
+		font-weight: bold;
+		font-size: 18px;
+		margin-top: auto;
+	}
+		/*Iconos del título*/
+	.contacto > div img{
+		width: 18px;
+		height: 18px;
+		margin: 0px 10px 0px 10px;
+	}
+
+	.contacto > div:nth-child(3){
+		grid-area: descontact;
+		font-family: raleway;
+		font-weight: lighter;
+		font-size: 10px;
+		align-content: flex-start;
+		margin: auto;
+		line-height: 25px;
+	}
+	/*Descripción de citas*/
+	.contacto > div:nth-child(4){
+		grid-area: pic;
+		background-image: url(imagenes/local.jpg);
+		width: 120px;
+		height: 120px;
+		margin: auto;
+		/*top, right, bottom, and left*/
+	}
+
+	/*Footer*/
+	footer{
+		background-color: black;
+	}
+
+	.fbitem{
+		display: block;
+		background: url(imagenes/fb20px.png);
+		height: 25px;
+		width: 25px;
+		background-repeat:no-repeat; 
+		background-position:center;
+		margin: 20px;
+	}
+
+	.instaitem{
+		display: block;
+		background: url(imagenes/ig20px.png);
+		height: 25px;
+		width: 25px;
+		background-repeat:no-repeat; 
+		background-position:center;
+		margin: 20px;
+	}
+
+	.wearevelut{
+		display: block;
+		background: url(imagenes/velut25px.png);
+		height: 25px;
+		width: 50px;
+		background-repeat:no-repeat; 
+		background-position:center;
+		margin: 20px;
+	}
+}
+
+/*Small Phone from 274px to 389px*/
+@media only screen 
+   and (min-width : 274px) {
+   	main{
+   		grid-template-rows: 150px auto 500px 1fr repeat(2, minmax(min-content, 300px)) 100px;
+   	}
+	   .header{
+			background-image: url(imagenes/headermin274.jpg);
+			height: 150px;
+		}	
+	}
+
+/*Smartphone screen from 390px to 539px*/
+@media only screen 
+   and (min-width : 390px) {
+   	   	main{
+   		grid-template-rows: 200px auto 500px 1fr repeat(2, minmax(min-content, 300px)) 100px;
+   	}
+
+   .header{
+		background-image: url(imagenes/headermin390.jpg);
+		height: 200px;
+	}
+
+	.title > p{
+		font-size: 15px;
+	}
+
+	/*Descripción de citas*/
+	.infor > div:nth-child(3){
+		font-size: 13px;
+	}
+
+	/*Descripción de cursos*/
+	.infor > div:nth-child(5){
+		font-size: 13px;
+	}
+
+	.contacto > div:nth-child(3){
+		font-size: 13px;
+	}
+}
+
+/*Smartphone screen from 540px to 693px*/
+@media only screen 
+   and (min-width : 540px) {
+
+   	main{
+   		grid-template-rows: 300px auto 500px 400px repeat(2, minmax(min-content, 300px)) 200px;
+   	}
+	
+	.header{
+		background-image: url(imagenes/headermin540.jpg);
+		height: 300px;
+	}
+
+   	/*Instagram Daniela Morga*/
+	/*grid dónde esta el de instagram*/
+	.instagramtitle {
+		grid-template-rows: 50px 60px 1fr 60px;
+	}
+
+		/*grid dónde esta el de instagram*/
+	.instagramtitle {
+		grid-template-rows: 70px 100px 1fr 100px;
+	}
+	/*Daniela Morga*/
+	.title >h1:nth-child(1){
+		font-size: 30px;
+	}
+
+	/*Descripción Daniela Morga*/
+	.title > p{
+		font-size: 18px;
+		padding: 20px;
+	}
+
+	.instagramtitle >div:nth-child(2){
+		font-size: 30px;
+		margin-left: 50px;
+	}
+
+		/*Título del grid*/
+	.infor > div:nth-child(1){
+		font-size: 30px;
+		margin: 60px 0px 20px 50px;
+	}
+	/*Título citas*/
+	.infor > div:nth-child(2){
+		font-size: 25px;
+		margin-top: 30px 0px 0px 50px;
+		
+	}
+	/*Iconos del título*/
+	.infor > div img{
+		width: 20px;
+		height: 20px;
+		margin: 0px 10px 0px 50px;
+	}
+	/*Descripción de citas*/
+	.infor > div:nth-child(3){
+		font-size: 18px;
+		margin: 0px 50px 150px 50px;
+		line-height: 25px;
+	}
+	/*Título cursos*/
+	.infor > div:nth-child(4){
+		font-size: 25px;
+		margin-top: 30px 0px 0px 0px;
+	}
+	/*Descripción de cursos*/
+	.infor > div:nth-child(5){
+		font-size: 18px;
+		margin: 0px 50px 150px 50px;
+		line-height: 25px;
+	}
+
+	/*Título del grid*/
+	.contacto > div:nth-child(1){
+		font-size: 30px;
+		margin: 60px 0px 20px 50px;
+		/*top, right, bottom, and left*/
+	}
+	/*Título citas*/
+	.contacto > div:nth-child(2){
+		font-size: 25px;
+		margin-top: 30px 0px 0px 50px;
+	}
+		/*Iconos del título*/
+	.contacto > div img{
+		width: 20px;
+		height: 20px;
+		margin: 0px 10px 0px 50px;
+	}
+
+	.contacto > div:nth-child(3){
+		font-size: 18px;
+		margin: 0px 30px 150px 50px;
+		line-height: 25px;
+	}
+	/*Descripción de citas*/
+	.contacto > div:nth-child(4){
+		grid-area: pic;
+		background-image: url(imagenes/local.jpg);
+		width: 220px;
+		height: 220px;
+		margin: 0px 80px 100px auto ;
+		/*top, right, bottom, and left*/
+	}
+}
+
+/*Smartphone screen from 694px to 767*/
+@media only screen 
+   and (min-width : 694px) {
+   	main{
+   		grid-template-rows: 400px auto 500px 400px repeat(2, minmax(min-content, 300px)) 200px;
+   	}
+	.header{
+		background-image: url(imagenes/headermin694.jpg);
+		height: 400px;
+	}
+
+		/*grid dónde esta el de instagram*/
+	.instagramtitle {
+		grid-template-rows: 70px 100px 1fr 100px;
+	}
+
+	.instagramtitle >div:nth-child(2){
+		font-size: 30px;
+	}
+
+		/*Título del grid*/
+	.infor > div:nth-child(1){
+		font-size: 30px;
+		margin: 60px 0px 20px 100px;
+	}
+	/*Título citas*/
+	.infor > div:nth-child(2){
+		font-size: 25px;
+		margin-top: 30px 0px 0px 100px;
+		
+	}
+	/*Iconos del título*/
+	.infor > div img{
+		width: 25px;
+		height: 25px;
+		margin: 0px 10px 0px 100px;
+	}
+	/*Descripción de citas*/
+	.infor > div:nth-child(3){
+		font-size: 15px;
+		margin: 0px 0px 150px 100px;
+		line-height: 30px;
+	}
+	/*Título cursos*/
+	.infor > div:nth-child(4){
+		font-size: 25px;
+		margin-top: 30px 0px 0px 0px;
+	}
+	/*Descripción de cursos*/
+	.infor > div:nth-child(5){
+		font-size: 15px;
+		margin: 0px 50px 150px 100px;
+		line-height: 30px;
+	}
+
+	/*Título del grid*/
+	.contacto > div:nth-child(1){
+		font-size: 30px;
+		margin: 60px 0px 20px 100px;
+		/*top, right, bottom, and left*/
+	}
+	/*Título citas*/
+	.contacto > div:nth-child(2){
+		font-size: 25px;
+		margin-top: 30px 0px 0px 100px;
+	}
+		/*Iconos del título*/
+	.contacto > div img{
+		width: 25px;
+		height: 25px;
+		margin: 0px 10px 0px 100px;
+	}
+
+	.contacto > div:nth-child(3){
+		font-size: 15px;
+		margin: 0px 0px 150px 100px;
+		line-height: 30px;
+	}
+	/*Descripción de citas*/
+	.contacto > div:nth-child(4){
+		grid-area: pic;
+		background-image: url(imagenes/local.jpg);
+		width: 220px;
+		height: 220px;
+		margin: 0px 80px 100px auto ;
+		/*top, right, bottom, and left*/
+	}
+
+	footer{
+	background-color: black;
+	margin-top: 50px;
+	}
+
+	.fbitem{
+		display: block;
+		background: url(imagenes/fb34.png);
+		height: 100px;
+		width: 100px;
+		background-repeat:no-repeat; 
+		background-position:center;
+	}
+
+	.instaitem{
+		display: block;
+		background: url(imagenes/ig34.png);
+		height: 100px;
+		width: 100px;
+		background-repeat:no-repeat; 
+		background-position:center;
+	}
+
+	.wearevelut{
+		display: block;
+		background: url(imagenes/velut84.png);
+		height: 100px;
+		width: 100px;
+		background-repeat:no-repeat; 
+		background-position:center;
+	}
+}
+
+/*Regular tablet screen from 768px to 839px*/
+@media only screen 
+   and (min-width : 768px) {
+   	main{
+   		grid-template-rows: 457px auto 500px 1fr repeat(2, minmax(min-content, 300px)) 200px;
+   	}
+
+   .header{
+		background-image: url(imagenes/headermin768.jpg);
+		height: 457px;
+	}
+
+	.title >h1:nth-child(1){
+		display: flex;
+		grid-area: danmor;
+		font-size: 35px;
+		font-family: 'Dancing Script', cursive;
+		font-weight: bold;
+		text-overflow: center;
+		margin: 0px 0px 0px 80px;
+		align-items: flex-end;
+	}
+
+	.title > p{
+		grid-area: descrip;
+		display: flex;
+		font-family: raleway;
+		font-size: 20px;
+		margin: 50px;
+		line-height: 30px;
+		align-items: flex-start;
+	}
+}
+
+/*Tablet screen from 840px to 999px*/
+@media only screen 
+   and (min-width : 840px) {
+   	.header{
+		background-image: url(imagenes/headermin840.jpg);
+		height: 457px;
+	}
+
+	/*Descripción de Daniela y foto de ella*/
+	/*Foto de Daniela*/
+	.profilepic{
+		background: url(imagenes/daniphone.png);
+		height: 100%;
+		width: 100%;
+		background-repeat:no-repeat; 
+		background-position:center;
+		background-color: #f5f5f5;
+	}
+	/*Posiciones de Daniela Morga y su descripción*/
+	.title {
+		display: grid;
+		grid-gap: 5px;
+		height: 100%;
+		grid-template-columns: 1fr;
+		grid-template-rows: 120px 1fr;
+		grid-template-areas:
+			"danmor"
+			"descrip";
+		/*background-color: #fef1f8;*/
+	}
+	/*Texto Daniela Morga*/
+	.title >h1:nth-child(1){
+		display: flex;
+		grid-area: danmor;
+		font-size: 35px;
+		font-family: 'Dancing Script', cursive;
+		font-weight: bold;
+		text-overflow: center;
+		margin: 0px 0px 0px 80px;
+		align-items: flex-end;
+	}
+	/*Descripción Daniela Morga*/
+	.title > p{
+		grid-area: descrip;
+		display: flex;
+		font-family: raleway;
+		font-size: 20px;
+		margin: 0px 80px 80px 80px;
+		/*top, right, bottom, and left*/
+		line-height: 30px;
+		align-items: flex-start;
+	}
+
+
+	/*Instagram Daniela Morga*/
+	/*grid dónde esta el de instagram*/
+	.instagramtitle {
+		display: grid;
+		grid-gap: 5px;
+		height: 100%;
+		grid-template-columns: 1fr;
+		grid-template-rows: 90px 150px 1fr 150px;
+		grid-template-areas:
+			"titleinsta"
+			"linea"
+			"descripinsta"
+			"linfoot";
+	}
+
+	/*Instagram imagen superior*/
+	.instagramtitle >div:nth-child(1){
+		grid-area: linea;
+		background: url(imagenes/lineamobile.png);
+		display: block;
+		width: 150px;
+		height: 30px;
+		background-repeat: no-repeat;
+		margin: auto;
+	}
+	/*Instagram titulo*/
+	.instagramtitle >div:nth-child(2){
+		display: flex;
+		grid-area: titleinsta;
+		font-size: 35px;
+		font-family: 'Dancing Script', cursive;
+		font-weight: bold;
+		text-align: center;
+		text-overflow: center;
+		margin: 0px 0px 0px 1fr;
+		align-items: flex-end;
+		margin: 50px 0px 0px 80px;
+		/*top, right, bottom, and left*/
+	}
+	/*Daniela Morga Instagram*/
+	.instagramtitle > div:nth-child(3){
+		grid-area: descripinsta;
+		display: flex;
+		margin: 0px;
+	}
+	/*Instagram imagen inferior*/
+	.instagramtitle >div:nth-child(4){
+		grid-area: linfoot;
+		background: url(imagenes/lineamobile.png);
+		display: block;
+		width: 150px;
+		height: 30px;
+		background-repeat: no-repeat;
+		margin: auto;
+	}
+
+	/* Citas, cursos y ubicación*/
+	/*Grid dónde está la información*/
+	.infor{
+		display: grid;
+		height: 100%;
+		font-weight: bold;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: auto 50px auto;
+		grid-template-areas:
+			"makeyourdate makeyourdate"
+			"citas cursos"
+			"descitas descursos";
+	}
+	/*Fondo del grid*/
+	div:nth-child(6){
+		background-color: #ffffff;
+	}	
+	/*Título del grid*/
+	.infor > div:nth-child(1){
+		grid-area: makeyourdate;
+		font-weight: bold;
+		font-family: 'Dancing Script', cursive;
+		font-size: 35px;
+		margin: 60px 0px 20px 150px;
+		/*top, right, bottom, and left*/
+	}
+	/*Título citas*/
+	.infor > div:nth-child(2){
+		grid-area: citas;
+		font-weight: bolder;
+		font-family: raleway;
+		font-size: 25px;
+		margin-top: 30px 0px 0px 140px;
+		
+	}
+	/*Iconos del título*/
+	.infor > div img{
+		width: 25px;
+		height: 25px;
+		margin: 0px 10px 0px 140px;
+	}
+	/*Descripción de citas*/
+	.infor > div:nth-child(3){
+		grid-area: descitas;
+		font-family: raleway;
+		font-weight: lighter;
+		font-size: 20px;
+		align-content: flex-start;
+		margin: 0px 0px 150px 140px;
+		line-height: 30px;
+	}
+	/*Título cursos*/
+	.infor > div:nth-child(4){
+		grid-area: cursos;
+		font-weight: bold;
+		font-family: raleway;
+		font-size: 25px;
+		margin-top: 30px 0px 0px 0px;
+	}
+	/*Descripción de cursos*/
+	.infor > div:nth-child(5){
+		grid-area: descursos;
+		font-family: raleway;
+		font-weight: lighter;
+		font-size: 20px;
+		align-content: flex-start;
+		margin: 0px 50px 150px 140px;
+		line-height: 30px;
+	}
+
+	/*Grid dónde esta la ubicación y la foto del local*/
+	/*Foto del local*/
+	.contacto{
+		display: grid;
+		height: 100%;
+		font-weight: bold;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: auto 50px auto;
+		grid-template-areas:
+			"ubic ubic"
+			"contact pic"
+			"descontact pic";
+	}
+	/*Título del grid*/
+	.contacto > div:nth-child(1){
+		grid-area: ubic;
+		font-weight: bold;
+		font-family: 'Dancing Script', cursive;
+		font-size: 35px;
+		margin: 60px 0px 20px 150px;
+		/*top, right, bottom, and left*/
+	}
+	/*Título citas*/
+	.contacto > div:nth-child(2){
+		grid-area: contact;
+		font-family: raleway;
+		font-weight: bold;
+		font-size: 25px;
+		margin-top: 30px 0px 0px 140px;
+	}
+		/*Iconos del título*/
+	.contacto > div img{
+		width: 25px;
+		height: 25px;
+		margin: 0px 10px 0px 140px;
+	}
+
+	.contacto > div:nth-child(3){
+		grid-area: descontact;
+		font-family: raleway;
+		font-weight: lighter;
+		font-size: 20px;
+		align-content: flex-start;
+		margin: 0px 0px 150px 140px;
+		line-height: 30px;
+	}
+	/*Descripción de citas*/
+	.contacto > div:nth-child(4){
+		grid-area: pic;
+		background-image: url(imagenes/local.jpg);
+		width: 220px;
+		height: 220px;
+		margin: 0px 80px 100px auto ;
+		/*top, right, bottom, and left*/
+	}
+
+	/*Footer*/
+	footer{
+		background-color: black;
+	}
+
+	.fbitem{
+		display: block;
+		background: url(imagenes/fb34.png);
+		height: 100px;
+		width: 100px;
+		background-repeat:no-repeat; 
+		background-position:center;
+	}
+
+	.instaitem{
+		display: block;
+		background: url(imagenes/ig34.png);
+		height: 100px;
+		width: 100px;
+		background-repeat:no-repeat; 
+		background-position:center;
+	}
+
+	.wearevelut{
+		display: block;
+		background: url(imagenes/velut84.png);
+		height: 100px;
+		width: 100px;
+		background-repeat:no-repeat; 
+		background-position:center;
+	}
+}
+
+/*Tablet screen from 1000px to 1199px*/
+@media only screen 
+   and (min-width : 1000px) {
+   	main{
+		grid-template-areas: 
+		"header header"
+		"about profilepicture"
+		"instagram instagram"
+		"dates info"
+		"footer footer";
+		grid-template-columns: repeat(2, minmax(min-content, 1fr));
+		grid-template-rows: 457px 1fr 1fr 1fr 200px;
+	}	
+
+	div:nth-child(6){
+		background-color: #fadde5;
+	}
+	/*Imagen de cabecera*/
+	.header{
+		background-image: url(imagenes/headermin1000.jpg);
+		height: 457px;
+	}
+
+	/*Descripción de Daniela y foto de ella*/
+	/*Foto de Daniela*/
+	.profilepic{
+		background: url(imagenes/dani.png);
+		height: 100%;
+		width: 100%;
+		background-repeat:no-repeat; 
+		background-position:center;
+		background-color: #f5f5f5;
+	}
+	/*Posiciones de Daniela Morga y su descripción*/
+	.title {
+		background-color: #f5f5f5;
+		display: grid;
+		grid-gap: 5px;
+		height: 100%;
+		grid-template-columns: 1fr;
+		grid-template-rows: 180px 1fr;
+		grid-template-areas:
+			"danmor"
+			"descrip";
+		/*background-color: #fef1f8;*/
+	}
+	/*Texto Daniela Morga*/
+	.title >h1:nth-child(1){
+		display: flex;
+		grid-area: danmor;
+		font-size: 30px;
+		font-family: 'Dancing Script', cursive;
+		font-weight: bold;
+		text-overflow: center;
+		margin: 0px 0px 0px 80px;
+		align-items: flex-end;
+	}
+	/*Descripción Daniela Morga*/
+	.title > p{
+		grid-area: descrip;
+		display: flex;
+		font-family: raleway;
+		font-size: 15px;
+		margin: 0px 0px 0px 80px;
+		/*top, right, bottom, and left*/
+		line-height: 30px;
+		align-items: flex-start;
+	}
+
+	/*Instagram Daniela Morga*/
+	/*grid dónde esta el de instagram*/
+	.instagramtitle {
+		display: grid;
+		grid-gap: 5px;
+		height: 100%;
+		grid-template-columns: 1fr;
+		grid-template-rows: 90px 150px 1fr 150px;
+		grid-template-areas:
+			"titleinsta"
+			"linea"
+			"descripinsta"
+			"linfoot";
+	}
+
+	/*Instagram imagen superior*/
+	.instagramtitle >div:nth-child(1){
+		background: url(imagenes/linea.png);
+		display: block;
+		grid-area: linea;
+		width: 302px;
+		height: 50px;
+		background-repeat: no-repeat;
+		margin: auto;
+	}
+	/*Instagram titulo*/
+	.instagramtitle >div:nth-child(2){
+		display: flex;
+		grid-area: titleinsta;
+		font-size: 30px;
+		font-family: 'Dancing Script', cursive;
+		font-weight: bold;
+		text-align: center;
+		text-overflow: center;
+		margin: 0px 0px 0px 1fr;
+		align-items: flex-end;
+		margin: 50px 0px 0px 80px;
+		/*top, right, bottom, and left*/
+	}
+	/*Daniela Morga Instagram*/
+	.instagramtitle > div:nth-child(3){
+		grid-area: descripinsta;
+		display: flex;
+	}
+	/*Instagram imagen inferior*/
+	.instagramtitle >div:nth-child(4){
+		grid-area: linfoot;
+		background: url(imagenes/linea.png);
+		display: block;
+		width: 302px;
+		height: 50px;
+		background-repeat: no-repeat;
+		margin: auto;
+		/*top, right, bottom, and left*/
+	}
+	
+	/* Citas, cursos y ubicación*/
+	/*Grid dónde está la información*/
+	.infor{
+		display: grid;
+		height: 100%;
+		font-weight: bold;
+		grid-template-columns: repeat(2, auto);
+		grid-template-rows: auto 50px auto;
+		grid-template-areas:
+			"makeyourdate makeyourdate"
+			"citas cursos"
+			"descitas descursos";
+	}
+	/*Título del grid*/
+	.infor > div:nth-child(1){
+		grid-area: makeyourdate;
+		font-weight: bold;
+		font-family: 'Dancing Script', cursive;
+		font-size: 30px;
+		margin: 60px 0px 20px 80px;
+		/*top, right, bottom, and left*/
+	}
+	/*Título citas*/
+	.infor > div:nth-child(2){
+		grid-area: citas;
+		font-weight: bolder;
+		font-family: raleway;
+		font-size: 20px;
+		margin-top: 30px;
+		
+	}
+	/*Iconos del título*/
+	.infor > div img{
+		width: 25px;
+		height: 25px;
+		margin: 0px 10px 0px 80px;
+	}
+	/*Descripción de citas*/
+	.infor > div:nth-child(3){
+		grid-area: descitas;
+		font-family: raleway;
+		font-weight: lighter;
+		font-size: 15px;
+		align-content: flex-start;
+		margin: 0px 0px 150px 80px;
+		line-height: 30px;
+	}
+	/*Título cursos*/
+	.infor > div:nth-child(4){
+		grid-area: cursos;
+		font-weight: bold;
+		font-family: raleway;
+		font-size: 20px;
+		margin-top: 30px;
+	}
+	/*Descripción de cursos*/
+	.infor > div:nth-child(5){
+		grid-area: descursos;
+		font-family: raleway;
+		font-weight: lighter;
+		font-size: 15px;
+		align-content: flex-start;
+		margin: 0px 50px 150px 80px;
+		line-height: 30px;
+	}
+
+	/*Grid dónde esta la ubicación y la foto del local*/
+	/*Foto del local*/
+	.contacto{
+		display: grid;
+		height: 100%;
+		font-weight: bold;
+		grid-template-columns: repeat(2, auto);
+		grid-template-rows: auto 50px auto;
+		grid-template-areas:
+			"ubic ubic"
+			"contact pic"
+			"descontact pic";
+	}
+	/*Título del grid*/
+	.contacto > div:nth-child(1){
+		grid-area: ubic;
+		font-weight: bold;
+		font-family: 'Dancing Script', cursive;
+		font-size: 30px;
+		margin: 60px 0px 20px 30px;
+		/*top, right, bottom, and left*/
+	}
+	/*Título citas*/
+	.contacto > div:nth-child(2){
+		grid-area: contact;
+		font-family: raleway;
+		font-weight: bold;
+		font-size: 20px;
+		margin-top: 30px;
+	}
+		/*Iconos del título*/
+	.contacto > div img{
+		width: 25px;
+		height: 25px;
+		margin: 0px 10px 0px 30px;
+	}
+
+	.contacto > div:nth-child(3){
+		grid-area: descontact;
+		font-family: raleway;
+		font-weight: lighter;
+		font-size: 15px;
+		align-content: flex-start;
+		margin: 0px 20px 150px 35px;
+		line-height: 30px;
+	}
+	/*Descripción de citas*/
+	.contacto > div:nth-child(4){
+		grid-area: pic;
+		background-image: url(imagenes/local.jpg);
+		width: 220px;
+		height: 220px;
+		margin: 0px 80px 100px auto ;
+		/*top, right, bottom, and left*/
+	}
+
+	/*Footer*/
+	footer{
+	background-color: black;
+	margin-top: 50px;
+	}
+
+	.fbitem{
+		display: block;
+		background: url(imagenes/fb34.png);
+		height: 100px;
+		width: 100px;
+		background-repeat:no-repeat; 
+		background-position:center;
+	}
+
+	.instaitem{
+		display: block;
+		background: url(imagenes/ig34.png);
+		height: 100px;
+		width: 100px;
+		background-repeat:no-repeat; 
+		background-position:center;
+	}
+
+	.wearevelut{
+		display: block;
+		background: url(imagenes/velut84.png);
+		height: 100px;
+		width: 100px;
+		background-repeat:no-repeat; 
+		background-position:center;
+	}
+}
+
+/* Big laptop screen from 1200px to 1399px*/
+@media only screen 
+   and (min-width : 1200px) {
+    main{
+		grid-template-rows: 533px 1fr 1fr 1fr 200px;
+	}	
+	/*Imagen de cabecera*/
+   .header{
+		background-image: url(imagenes/headermin1200.jpg);
+		height: 533px;
+	}
+
+	/*Descripción de Daniela y foto de ella*/
+	/*Posiciones de Daniela Morga y su descripción*/
+	.title {
+		grid-template-rows: 250px 1fr;
+	}
+	/*Texto Daniela Morga*/
+	.title >h1:nth-child(1){
+		font-size: 40px;
+		align-items: flex-end;
+	}
+	/*Descripción Daniela Morga*/
+	.title > p{
+		font-size: 18px;
+		margin: 5px 0px 0px 80px;
+		/*top, right, bottom, and left*/
+	}
+
+	/*Instagram Daniela Morga*/
+
+	/*Instagram titulo*/
+	.instagramtitle >div:nth-child(2){
+		font-size: 40px;
+	}
+	
+	/* Citas, cursos y ubicación*/
+
+	/*Título del grid*/
+	.infor > div:nth-child(1){
+		font-size: 40px;
+		margin: 60px 0px 20px 80px;
+		/*top, right, bottom, and left*/
+	}
+	/*Título citas*/
+	.infor > div:nth-child(2){
+		font-size: 25px;
+		margin-top: 30px;
+		
+	}
+	/*Iconos del título*/
+	.infor > div img{
+		width: 30px;
+		height: 30px;
+		margin: 0px 10px 0px 80px;
+	}
+	/*Descripción de citas*/
+	.infor > div:nth-child(3){
+		font-size: 20px;
+		align-content: flex-start;
+		margin: 0px 50px 150px 80px;
+		line-height: 30px;
+	}
+	/*Título cursos*/
+	.infor > div:nth-child(4){
+		font-size: 25px;
+		margin-top: 30px;
+	}
+	/*Descripción de cursos*/
+	.infor > div:nth-child(5){
+		font-size: 20px;
+		align-content: flex-start;
+		margin: 0px 50px 150px 80px;
+		line-height: 30px;
+	}
+
+	/*Grid dónde esta la ubicación y la foto del local*/
+	/*Título del grid*/
+	.contacto > div:nth-child(1){
+		font-size: 40px;
+		margin: 60px 0px 20px 80px;
+		/*top, right, bottom, and left*/
+	}
+	/*Título citas*/
+	.contacto > div:nth-child(2){
+		font-size: 25px;
+		margin-top: 30px;
+	}
+		/*Iconos del título*/
+	.contacto > div img{
+		width: 30px;
+		height: 30px;
+		margin: 0px 10px 0px 80px;
+	}
+
+	.contacto > div:nth-child(3){
+		font-size: 20px;
+		align-content: flex-start;
+		margin: 0px 50px 150px 80px;
+		line-height: 30px;
+	}
+	/*Descripción de citas*/
+	.contacto > div:nth-child(4){
+		background-image: url(imagenes/local.jpg);
+		width: 220px;
+		height: 220px;
+		margin: 0px 80px 100px 0px;
+		/*top, right, bottom, and left*/
+	}
+}
+
+/* Big dektop screen, up to 1400px*/
+@media only screen 
+   and (min-width : 1400px) {
+    main{
+		grid-template-rows: 607px 1fr 1fr 1fr 200px;
+	}
+	.header{
+		background-image: url(imagenes/headermin1400.jpg);
+		height: 607px;
+	}
+
+	/*Texto Daniela Morga*/
+	.title >h1:nth-child(1){
+		font-size: 55px;
+	}
+	/*Descripción Daniela Morga*/
+	.title > p{
+		font-size: 20px;
+	}
+
+	/*Instagram titulo*/
+	.instagramtitle >div:nth-child(2){
+		font-size: 50px;
+	}
+
+	/*Título del grid*/
+	.infor > div:nth-child(1){
+		font-size: 50px;
+	}
+
+	/*Título citas*/
+	.infor > div:nth-child(2){
+		font-size: 35px;
+		
+	}
+	/*Iconos del título*/
+	.infor > div img{
+		width: 35px;
+		height: 35px;
+	}
+	/*Descripción de citas*/
+	.infor > div:nth-child(3){
+		font-size: 25px;
+	}
+	/*Título cursos*/
+	.infor > div:nth-child(4){
+		font-size: 35px;
+	}
+	/*Descripción de cursos*/
+	.infor > div:nth-child(5){
+		font-size: 25px;
+	}
+	/*Título del grid*/
+	.contacto > div:nth-child(1){
+		font-size: 50px;
+	}
+	/*Título citas*/
+	.contacto > div:nth-child(2){
+		font-size: 35px;
+	}
+	/*Iconos del título*/
+	.contacto > div img{
+		width: 35px;
+		height: 35px;
+	}
+	/*Descripción de citas*/
+	.contacto > div:nth-child(3){
+		font-size: 25px;
+	}
+
+	/*Descripción de citas*/
+	.contacto > div:nth-child(4){
+		grid-area: pic;
+		background-image: url(imagenes/local.jpg);
+		width: 220px;
+		height: 220px;
+		margin: 0px 80px 100px 0px;
+		/*top, right, bottom, and left*/
+	}
+
+}

@@ -1,0 +1,370 @@
+main{
+	display: grid;
+	height: auto;
+	grid-gap: 0px 0px;
+	grid-template-areas: 
+		"header"
+		"timufantasy"
+		"mufantasy"
+		"timufull"
+		"mufull"
+		"timuglam"
+		"muglam"
+		"timuwedding"
+		"muwedding"
+		"timusocial"
+		"musocial"
+		"timuxv"
+		"muxv"
+		"footer";
+	grid-template-columns: repeat(1, minmax(min-content, 1fr));
+	grid-template-rows: auto repeat(6, 
+			minmax(min-content, 100px)
+			minmax(min-content, 1fr)
+		) 150px;
+}
+
+main > * {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: arial;
+}
+
+body{
+	margin: 0px;
+}
+
+/*Nombrar Areas*/
+header{
+	grid-area: header;
+	background-color: gray;
+}
+
+h2:nth-child(2){
+	grid-area: timufantasy;
+}
+
+section:nth-child(3){
+	grid-area: mufantasy;
+}
+
+h2:nth-child(4){
+	grid-area: timufull;
+}
+
+section:nth-child(5){
+	grid-area: mufull;
+}
+
+h2:nth-child(6){
+	grid-area: timuglam;
+}
+
+section:nth-child(7){
+	grid-area: muglam;
+}
+
+h2:nth-child(8){
+	grid-area: timuwedding;
+}
+
+section:nth-child(9){
+	grid-area: muwedding;
+}
+
+h2:nth-child(10){
+	grid-area: timusocial;
+}
+
+section:nth-child(11){
+	grid-area: musocial;
+}
+
+h2:nth-child(12){
+	grid-area: timuxv;
+}
+
+section:nth-child(13){
+	grid-area: muxv;
+}
+
+footer{
+	grid-area: footer;
+	background-color: yellow;
+}
+
+section {
+    display: grid;
+    grid-gap: 10px;
+    font-family:sans-serif;
+    margin: 20px;
+}
+
+div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    text-align: center;
+}
+
+.auto-fit div {
+	background-color: purple;
+	color: white;
+}
+
+.auto-fit{
+	grid-template-columns: repeat(auto-fit, minmax(100px, 100px));
+}
+
+/*Small phone from 100px to 273px*/
+@media only screen 
+   and (min-width : 100px) {
+   	/*La primera row va del tamaño del height*/
+   .header{
+		background-image: url(imagenes/headermin200.jpg);
+		height: 100px;
+	}
+
+	main{
+		grid-template-rows: auto repeat(6, 
+			minmax(min-content, 100px)
+			minmax(min-content, 1fr)
+		) 120px;
+	}
+
+	footer{
+		background-color: black; 
+
+	}
+
+	.fbitem{
+		display: block;
+		background: url(imagenes/fb20px.png);
+		height: 25px;
+		width: 25px;
+		background-repeat:no-repeat; 
+		background-position:center;
+		margin: 20px;
+	}
+
+	.instaitem{
+		display: block;
+		background: url(imagenes/ig20px.png);
+		height: 25px;
+		width: 25px;
+		background-repeat:no-repeat; 
+		background-position:center;
+		margin: 20px;
+	}
+
+	.wearevelut{
+		display: block;
+		background: url(imagenes/velut25px.png);
+		height: 25px;
+		width: 50px;
+		background-repeat:no-repeat; 
+		background-position:center;
+		margin: 20px;
+	}
+}
+
+/*Small Phone from 274px to 389px*/
+@media only screen 
+   and (min-width : 274px) {
+   	/*La primera row va del tamaño del height*/
+   .header{
+		background-image: url(imagenes/headermin274.jpg);
+		height: 150px;
+	}	
+}
+
+/*Smartphone screen from 390px to 539px*/
+@media only screen 
+   and (min-width : 390px) {
+   	/*La primera row va del tamaño del height*/
+   .header{
+		background-image: url(imagenes/headermin390.jpg);
+		height: 200px;
+	}
+}
+
+/*Smartphone screen from 540px to 693px*/
+@media only screen 
+   and (min-width : 540px) {
+   	/*La primera row va del tamaño del height*/
+	.header{
+		background-image: url(imagenes/headermin540.jpg);
+		height: 300px;
+	}
+}
+
+/*Smartphone screen from 694px to 767*/
+@media only screen 
+   and (min-width : 694px) {
+   	/*La primera row va del tamaño del height*/
+	.header{
+		background-image: url(imagenes/headermin694.jpg);
+		height: 400px;
+	}
+
+	main{
+		grid-template-rows: auto repeat(6, 
+			minmax(min-content, 100px)
+			minmax(min-content, 1fr)
+		) 140px;
+	}
+
+	footer{
+	background-color: black;
+	}
+
+	.fbitem{
+		display: block;
+		background: url(imagenes/fb34.png);
+		height: 100px;
+		width: 100px;
+		background-repeat:no-repeat; 
+		background-position:center;
+	}
+
+	.instaitem{
+		display: block;
+		background: url(imagenes/ig34.png);
+		height: 100px;
+		width: 100px;
+		background-repeat:no-repeat; 
+		background-position:center;
+	}
+
+	.wearevelut{
+		display: block;
+		background: url(imagenes/velut84.png);
+		height: 100px;
+		width: 100px;
+		background-repeat:no-repeat; 
+		background-position:center;
+	}
+}
+
+
+/*Regular tablet screen from 768px to 839px*/
+@media only screen 
+   and (min-width : 768px) {
+   	/*La primera row va del tamaño del height*/
+   .header{
+		background-image: url(imagenes/headermin768.jpg);
+		height: 457px;
+	}
+}
+
+/*Tablet screen from 840px to 999px*/
+@media only screen 
+   and (min-width : 840px) {
+   	/*La primera row va del tamaño del height*/
+   	.header{
+		background-image: url(imagenes/headermin840.jpg);
+		height: 457px;
+	}
+
+	main{
+		grid-template-rows: auto repeat(6, 
+			minmax(min-content, 100px)
+			minmax(min-content, 1fr)
+		) 150px;
+	}
+
+	footer{
+		background-color: black;
+	}
+
+	.fbitem{
+		display: block;
+		background: url(imagenes/fb34.png);
+		height: 100px;
+		width: 100px;
+		background-repeat:no-repeat; 
+		background-position:center;
+	}
+
+	.instaitem{
+		display: block;
+		background: url(imagenes/ig34.png);
+		height: 100px;
+		width: 100px;
+		background-repeat:no-repeat; 
+		background-position:center;
+	}
+
+	.wearevelut{
+		display: block;
+		background: url(imagenes/velut84.png);
+		height: 100px;
+		width: 100px;
+		background-repeat:no-repeat; 
+		background-position:center;
+	}
+}
+
+/*Tablet screen from 1000px to 1199px*/
+@media only screen 
+   and (min-width : 1000px) {
+   	/*La primera row va del tamaño del height*/
+	.header{
+		background-image: url(imagenes/headermin1000.jpg);
+		height: 457px;
+	}
+
+	footer{
+		background-color: black;
+		margin: 0px;
+	}
+
+	.fbitem{
+		display: block;
+		background: url(imagenes/fb34.png);
+		height: 100px;
+		width: 100px;
+		background-repeat:no-repeat; 
+		background-position:center;
+	}
+
+	.instaitem{
+		display: block;
+		background: url(imagenes/ig34.png);
+		height: 100px;
+		width: 100px;
+		background-repeat:no-repeat; 
+		background-position:center;
+	}
+
+	.wearevelut{
+		display: block;
+		background: url(imagenes/velut84.png);
+		height: 100px;
+		width: 100px;
+		background-repeat:no-repeat; 
+		background-position:center;
+	}
+}
+
+/* Big laptop screen from 1200px to 1399px*/
+@media only screen 
+   and (min-width : 1200px) {
+   	/*La primera row va del tamaño del height*/
+   .header{
+		background-image: url(imagenes/headermin1200.jpg);
+		height: 533px;
+	}
+}
+
+/* Big dektop screen, up to 1400px*/
+@media only screen 
+   and (min-width : 1400px) {
+   	/*La primera row va del tamaño del height*/
+	.header{
+		background-image: url(imagenes/headermin1400.jpg);
+		height: 607px;
+	}
+}
