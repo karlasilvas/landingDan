@@ -1,3 +1,7 @@
+body{
+	margin: 0px;
+}
+
 main{
 	display: grid;
 	height: auto;
@@ -31,9 +35,6 @@ main > * {
 	font-family: arial;
 }
 
-body{
-	margin: 0px;
-}
 
 /*Nombrar Areas*/
 header{
@@ -92,7 +93,7 @@ section:nth-child(13){
 footer{
 	grid-area: footer;
 	background-color: yellow;
-}
+	}
 
 section {
     display: grid;
@@ -105,7 +106,6 @@ div {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 50px;
     text-align: center;
 }
 
