@@ -24,7 +24,7 @@ main{
 	grid-template-columns: repeat(1, minmax(min-content, 1fr));
 	grid-template-rows: auto repeat(6, 
 			minmax(min-content, 100px)
-			minmax(min-content, 1fr)
+			minmax(min-content, auto)
 		) 150px;
 }
 
@@ -130,7 +130,7 @@ div {
 	main{
 		grid-template-rows: auto repeat(6, 
 			minmax(min-content, 100px)
-			minmax(min-content, 1fr)
+			minmax(min-content, auto)
 		) 120px;
 	}
 
@@ -212,7 +212,7 @@ div {
 	main{
 		grid-template-rows: auto repeat(6, 
 			minmax(min-content, 100px)
-			minmax(min-content, 1fr)
+			minmax(min-content, auto)
 		) 140px;
 	}
 
@@ -271,7 +271,7 @@ div {
 	main{
 		grid-template-rows: auto repeat(6, 
 			minmax(min-content, 100px)
-			minmax(min-content, 1fr)
+			minmax(min-content, auto)
 		) 150px;
 	}
 
