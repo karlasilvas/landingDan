@@ -99,7 +99,7 @@ section {
     display: grid;
     grid-gap: 10px;
     font-family:sans-serif;
-    margin: 20px;
+    margin: 20px 0;
 }
 
 div {
@@ -109,13 +109,13 @@ div {
     text-align: center;
 }
 
-.auto-fit div {
-	background-color: purple;
-	color: white;
+.auto-fit div img {
+	width: 80%;
+	height: 80%;
 }
 
 .auto-fit{
-	grid-template-columns: repeat(auto-fit, minmax(100px, 100px));
+	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 }
 
 /*Small phone from 100px to 273px*/
