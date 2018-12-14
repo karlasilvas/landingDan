@@ -25,7 +25,7 @@ main{
 	grid-template-rows: auto repeat(6, 
 			minmax(min-content, 100px)
 			minmax(min-content, auto)
-		) 150px;
+		) 100px;
 }
 
 main > * {
@@ -136,7 +136,7 @@ h2 {
 		grid-template-rows: auto repeat(6, 
 			minmax(min-content, 100px)
 			minmax(min-content, auto)
-		) 120px;
+		) 100px;
 	}
 
 	footer{
@@ -323,7 +323,6 @@ h2 {
 
 	footer{
 		background-color: black;
-		margin: 0px;
 	}
 
 	.fbitem{
