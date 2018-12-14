@@ -1,4 +1,8 @@
-main{
+body {
+	margin: 0px;
+}
+
+main{ 
 	display: grid;
 	height: auto;
 	grid-gap: 0px 0px;
@@ -96,7 +100,8 @@ footer{
 		font-family: 'Dancing Script', cursive;
 		font-weight: bold;
 		text-overflow: center;
-		margin: auto;
+		margin: 0px 30px;
+		/*top, right, bottom, and left*/
 		align-items: flex-end;
 	}
 	/*Descripción Daniela Morga*/
@@ -105,11 +110,11 @@ footer{
 		display: flex;
 		font-family: raleway;
 		font-size: 10px;
-		margin: auto;
+		margin: 0px 30px;
 		/*top, right, bottom, and left*/
 		line-height: 30px;
 		align-items: flex-start;
-		padding: 15px;
+		padding: 15px 15px 15px 0px;
 	}
 
 
@@ -148,7 +153,7 @@ footer{
 		text-align: center;
 		text-overflow: center;
 		align-items: flex-end;
-		margin: auto;
+		margin: 0px 30px;
 		/*top, right, bottom, and left*/
 	}
 	/*Daniela Morga Instagram*/
@@ -190,7 +195,7 @@ footer{
 		font-weight: bold;
 		font-family: 'Dancing Script', cursive;
 		font-size: 23px;
-		margin: auto;
+		margin: 0px 30px;
 		/*top, right, bottom, and left*/
 	}
 	/*Título citas*/
@@ -199,14 +204,14 @@ footer{
 		font-weight: bolder;
 		font-family: raleway;
 		font-size: 18px;
-		margin-top: auto;
+		margin-top: 0px 30px;
 		
 	}
 	/*Iconos del título*/
 	.infor > div img{
 		width: 18px;
 		height: 18px;
-		margin: 0px 10px 0px 10px;
+		margin: 0px 10px 0px 30px;
 	}
 	/*Descripción de citas*/
 	.infor > div:nth-child(3){
@@ -215,7 +220,7 @@ footer{
 		font-weight: lighter;
 		font-size: 10px;
 		align-content: flex-start;
-		margin: auto;
+		margin: -40px 30px 0px 30px;
 		line-height: 25px;
 	}
 	/*Título cursos*/
@@ -224,7 +229,7 @@ footer{
 		font-weight: bold;
 		font-family: raleway;
 		font-size: 18px;
-		margin-top: auto;
+		margin-top: 0px 30px;
 	}
 	/*Descripción de cursos*/
 	.infor > div:nth-child(5){
@@ -233,7 +238,7 @@ footer{
 		font-weight: lighter;
 		font-size: 10px;
 		align-content: flex-start;
-		margin: auto;
+		margin: -40px 30px 0px 30px;
 		line-height: 25px;
 	}
 
@@ -246,8 +251,8 @@ footer{
 		grid-template-columns: repeat(2, 1fr);
 		grid-template-rows: auto 50px auto;
 		grid-template-areas:
-			"ubic ubic"
-			"contact contact"
+			"ubic pic"
+			"contact pic"
 			"descontact pic";
 	}
 	/*Título del grid*/
@@ -256,7 +261,7 @@ footer{
 		font-weight: bold;
 		font-family: 'Dancing Script', cursive;
 		font-size: 23px;
-		margin: auto;
+		margin: 0px 30px;
 		/*top, right, bottom, and left*/
 	}
 	/*Título citas*/
@@ -265,13 +270,13 @@ footer{
 		font-family: raleway;
 		font-weight: bold;
 		font-size: 18px;
-		margin-top: auto;
+		margin-top: 0px 30px;
 	}
 		/*Iconos del título*/
 	.contacto > div img{
 		width: 18px;
 		height: 18px;
-		margin: 0px 10px 0px 10px;
+		margin: 0px 10px 0px 30px;
 	}
 
 	.contacto > div:nth-child(3){
@@ -280,16 +285,19 @@ footer{
 		font-weight: lighter;
 		font-size: 10px;
 		align-content: flex-start;
-		margin: auto;
+		margin: -40px 30px 0px 30px;
 		line-height: 25px;
 	}
-	/*Descripción de citas*/
-	.contacto > div:nth-child(4){
+	
+		/*local*/
+	.contacto > section:nth-child(4){
 		grid-area: pic;
-		background-image: url(imagenes/local.jpg);
-		width: 120px;
-		height: 120px;
-		margin: auto;
+	}
+
+	.contacto section img{
+		width: 90%;
+		height: 70%;
+		margin: 50px 0px 0px -5px;
 		/*top, right, bottom, and left*/
 	}
 
@@ -377,7 +385,7 @@ footer{
    and (min-width : 540px) {
 
    	main{
-   		grid-template-rows: 300px auto 500px 400px repeat(2, minmax(min-content, 300px)) 200px;
+   		grid-template-rows: 300px auto 500px 400px repeat(2, minmax(min-content, 300px)) 150px;
    	}
 	
 	.header{
@@ -398,12 +406,14 @@ footer{
 	/*Daniela Morga*/
 	.title >h1:nth-child(1){
 		font-size: 30px;
+		margin: 10px 50px;
 	}
 
 	/*Descripción Daniela Morga*/
 	.title > p{
 		font-size: 18px;
-		padding: 20px;
+		/*top, right, bottom, and left*/
+		margin: 10px 50px;
 	}
 
 	.instagramtitle >div:nth-child(2){
@@ -470,12 +480,15 @@ footer{
 		line-height: 25px;
 	}
 	/*Descripción de citas*/
-	.contacto > div:nth-child(4){
+		/*local*/
+	.contacto > section:nth-child(4){
 		grid-area: pic;
-		background-image: url(imagenes/local.jpg);
-		width: 220px;
-		height: 220px;
-		margin: 0px 80px 100px auto ;
+	}
+
+	.contacto section img{
+		width: 90%;
+		height: 70%;
+		margin: 0px;
 		/*top, right, bottom, and left*/
 	}
 }
@@ -484,7 +497,7 @@ footer{
 @media only screen 
    and (min-width : 694px) {
    	main{
-   		grid-template-rows: 400px auto 500px 400px repeat(2, minmax(min-content, 300px)) 200px;
+   		grid-template-rows: 400px auto 500px 400px repeat(2, minmax(min-content, 300px)) 180px;
    	}
 	.header{
 		background-image: url(imagenes/headermin694.jpg);
@@ -493,34 +506,36 @@ footer{
 
 		/*grid dónde esta el de instagram*/
 	.instagramtitle {
-		grid-template-rows: 70px 100px 1fr 100px;
+		grid-template-rows: 70px 50px 1fr 100px;
+		/*top, right, bottom, and left*/
 	}
 
 	.instagramtitle >div:nth-child(2){
 		font-size: 30px;
 	}
 
-		/*Título del grid*/
+	/*Título del grid*/
 	.infor > div:nth-child(1){
 		font-size: 30px;
-		margin: 60px 0px 20px 100px;
+		margin: 60px 0px 20px 70px;
+		/*top, right, bottom, and left*/
 	}
 	/*Título citas*/
 	.infor > div:nth-child(2){
 		font-size: 25px;
-		margin-top: 30px 0px 0px 100px;
+		margin-top: 30px 0px 0px 70px;
 		
 	}
 	/*Iconos del título*/
 	.infor > div img{
 		width: 25px;
 		height: 25px;
-		margin: 0px 10px 0px 100px;
+		margin: 0px 10px 0px 80px;
 	}
 	/*Descripción de citas*/
 	.infor > div:nth-child(3){
 		font-size: 15px;
-		margin: 0px 0px 150px 100px;
+		margin: 0px 0px 150px 70px;
 		line-height: 30px;
 	}
 	/*Título cursos*/
@@ -531,46 +546,48 @@ footer{
 	/*Descripción de cursos*/
 	.infor > div:nth-child(5){
 		font-size: 15px;
-		margin: 0px 50px 150px 100px;
+		margin: 0px 50px 150px 70px;
 		line-height: 30px;
 	}
 
 	/*Título del grid*/
 	.contacto > div:nth-child(1){
 		font-size: 30px;
-		margin: 60px 0px 20px 100px;
+		margin: 60px 0px 20px 70px;
 		/*top, right, bottom, and left*/
 	}
 	/*Título citas*/
 	.contacto > div:nth-child(2){
 		font-size: 25px;
-		margin-top: 30px 0px 0px 100px;
+		margin-top: 30px 0px 0px 70px;
 	}
 		/*Iconos del título*/
 	.contacto > div img{
 		width: 25px;
 		height: 25px;
-		margin: 0px 10px 0px 100px;
+		margin: 0px 10px 0px 70px;
 	}
 
 	.contacto > div:nth-child(3){
 		font-size: 15px;
-		margin: 0px 0px 150px 100px;
+		margin: 0px 0px 150px 70px;
 		line-height: 30px;
 	}
-	/*Descripción de citas*/
-	.contacto > div:nth-child(4){
+		/*local*/
+	
+	.contacto > section:nth-child(4){
 		grid-area: pic;
-		background-image: url(imagenes/local.jpg);
-		width: 220px;
-		height: 220px;
-		margin: 0px 80px 100px auto ;
+	}
+
+	.contacto section img{
+		width: 90%;
+		height: 70%;
+		margin: 0px;
 		/*top, right, bottom, and left*/
 	}
 
 	footer{
 	background-color: black;
-	margin-top: 50px;
 	}
 
 	.fbitem{
@@ -613,6 +630,16 @@ footer{
 		height: 457px;
 	}
 
+	/*Foto de Daniela*/
+	.profilepic{
+		background: url(imagenes/dani.png);
+		height: 100%;
+		width: 100%;
+		background-repeat:no-repeat; 
+		background-position:center;
+		background-color: #f5f5f5;
+	}
+
 	.title >h1:nth-child(1){
 		display: flex;
 		grid-area: danmor;
@@ -620,7 +647,7 @@ footer{
 		font-family: 'Dancing Script', cursive;
 		font-weight: bold;
 		text-overflow: center;
-		margin: 0px 0px 0px 80px;
+		margin: 0px 0px 0px 50px;
 		align-items: flex-end;
 	}
 
@@ -629,7 +656,8 @@ footer{
 		display: flex;
 		font-family: raleway;
 		font-size: 20px;
-		margin: 50px;
+		margin: 0px 50px 50px 50px;
+		/*top, right, bottom, and left*/
 		line-height: 30px;
 		align-items: flex-start;
 	}
@@ -824,7 +852,7 @@ footer{
 		grid-template-columns: repeat(2, 1fr);
 		grid-template-rows: auto 50px auto;
 		grid-template-areas:
-			"ubic ubic"
+			"ubic pic"
 			"contact pic"
 			"descontact pic";
 	}
@@ -861,13 +889,16 @@ footer{
 		margin: 0px 0px 150px 140px;
 		line-height: 30px;
 	}
-	/*Descripción de citas*/
-	.contacto > div:nth-child(4){
+
+	/*local*/
+	.contacto > section:nth-child(4){
 		grid-area: pic;
-		background-image: url(imagenes/local.jpg);
-		width: 220px;
-		height: 220px;
-		margin: 0px 80px 100px auto ;
+	}
+
+	.contacto section img{
+		width: 90%;
+		height: 70%;
+		margin: 0px 0px 0px 0px;
 		/*top, right, bottom, and left*/
 	}
 
@@ -1104,7 +1135,7 @@ footer{
 		grid-template-columns: repeat(2, auto);
 		grid-template-rows: auto 50px auto;
 		grid-template-areas:
-			"ubic ubic"
+			"ubic pic"
 			"contact pic"
 			"descontact pic";
 	}
@@ -1141,20 +1172,21 @@ footer{
 		margin: 0px 20px 150px 35px;
 		line-height: 30px;
 	}
-	/*Descripción de citas*/
-	.contacto > div:nth-child(4){
+	/*local*/
+	.contacto > section:nth-child(4){
 		grid-area: pic;
-		background-image: url(imagenes/local.jpg);
-		width: 220px;
-		height: 220px;
-		margin: 0px 80px 100px auto ;
+	}
+
+	.contacto section img{
+		width: 80%;
+		height: 60%;
+		margin: 50px 0px 0px 30px;
 		/*top, right, bottom, and left*/
 	}
 
 	/*Footer*/
 	footer{
 	background-color: black;
-	margin-top: 50px;
 	}
 
 	.fbitem{
@@ -1189,7 +1221,7 @@ footer{
 @media only screen 
    and (min-width : 1200px) {
     main{
-		grid-template-rows: 533px 1fr 1fr 1fr 200px;
+		grid-template-rows: 533px 1fr 1fr 1fr 170px;
 	}	
 	/*Imagen de cabecera*/
    .header{
@@ -1245,7 +1277,7 @@ footer{
 	.infor > div:nth-child(3){
 		font-size: 20px;
 		align-content: flex-start;
-		margin: 0px 50px 150px 80px;
+		margin: 0px 0px 150px 80px;
 		line-height: 30px;
 	}
 	/*Título cursos*/
@@ -1257,7 +1289,7 @@ footer{
 	.infor > div:nth-child(5){
 		font-size: 20px;
 		align-content: flex-start;
-		margin: 0px 50px 150px 80px;
+		margin: 0px 0px 150px 80px;
 		line-height: 30px;
 	}
 
@@ -1271,7 +1303,7 @@ footer{
 	/*Título citas*/
 	.contacto > div:nth-child(2){
 		font-size: 25px;
-		margin-top: 30px;
+		margin: 30px 0px 0px -50px;
 	}
 		/*Iconos del título*/
 	.contacto > div img{
@@ -1283,15 +1315,17 @@ footer{
 	.contacto > div:nth-child(3){
 		font-size: 20px;
 		align-content: flex-start;
-		margin: 0px 50px 150px 80px;
 		line-height: 30px;
 	}
 	/*Descripción de citas*/
-	.contacto > div:nth-child(4){
-		background-image: url(imagenes/local.jpg);
-		width: 220px;
-		height: 220px;
-		margin: 0px 80px 100px 0px;
+	.contacto > section:nth-child(4){
+		grid-area: pic;
+	}
+
+	.contacto section img {
+		width: 80%;
+		height: 60%;
+		margin: 50px 25px 0px 25px;
 		/*top, right, bottom, and left*/
 	}
 }
@@ -1300,7 +1334,7 @@ footer{
 @media only screen 
    and (min-width : 1400px) {
     main{
-		grid-template-rows: 607px 1fr 1fr 1fr 200px;
+		grid-template-rows: 607px 1fr 1fr 1fr 170px;
 	}
 	.header{
 		background-image: url(imagenes/headermin1400.jpg);
@@ -1351,28 +1385,35 @@ footer{
 	/*Título del grid*/
 	.contacto > div:nth-child(1){
 		font-size: 50px;
+		margin: 60px 0px 20px 30px;
 	}
 	/*Título citas*/
 	.contacto > div:nth-child(2){
 		font-size: 35px;
+		margin: 30px 0px 0px -50px;
 	}
 	/*Iconos del título*/
 	.contacto > div img{
-		width: 35px;
-		height: 35px;
+		width: 30px;
+		height: 30px;
+		margin: 0px 10px 0px 80px;
 	}
 	/*Descripción de citas*/
 	.contacto > div:nth-child(3){
 		font-size: 25px;
+		align-content: flex-start;
+		line-height: 30px;
 	}
 
-	/*Descripción de citas*/
-	.contacto > div:nth-child(4){
+	/*local*/
+	.contacto > section:nth-child(4){
 		grid-area: pic;
-		background-image: url(imagenes/local.jpg);
-		width: 220px;
-		height: 220px;
-		margin: 0px 80px 100px 0px;
+	}
+
+	.contacto section img {
+		width: 90%;
+		height: 70%;
+		margin: 50px 25px 0px 25px;
 		/*top, right, bottom, and left*/
 	}
 

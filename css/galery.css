@@ -109,6 +109,11 @@ div {
     text-align: center;
 }
 
+h2 {
+	font-family: 'Dancing Script', cursive;
+	font-size: 40px;
+}
+
 .auto-fit div img {
 	width: 80%;
 	height: 80%;
