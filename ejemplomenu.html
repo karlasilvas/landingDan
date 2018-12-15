@@ -9,32 +9,26 @@
 	<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
 </head>
 <body>
-
-	<header class="header">
-		<div class="topnav" id="myTopnav">
-			<a href="index.html">Daniela Morga</a>
-			<div>makeup artist</div>
-			<a href="index.html">Inicio</a>
-			<a href="galery.html">Galeria</a>
-			<a href="javascript:void(0);" class="icon" onclick="myFunction()">
-			<i class="fa fa-bars"></i>
-			</a>
+	<header>
+		<div class="container">
+			<nav>
+				<input type="checkbox" id="nav"	class="hidden">
+				<label for="nav" class="nav-btn">
+					<i></i>
+					<i></i>
+					<i></i>
+				</label>
+				<div class="logo">
+					<a href="#">Daniela Morga</a>
+				</div>
+				<div class="nav-wrapper">
+					<ul>
+						<li><a href="#">Inicio</a></li>
+						<li><a href="#">Galeria</a></li>
+					</ul>
+				</div>
+			</nav>
 		</div>
 	</header>
-
-
-	<script>
-		function myFunction() {
-		var x = document.getElementById("myTopnav");
-		if (x.className === "topnav") {
-		x.className += " responsive";
-		} else {
-		x.className = "topnav";
-		}
-		}
-	</script>
-
-
-
 </body>
 </html>
