@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Responsive Menú</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/ejemplomenu.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+</head>
+<body>
+
+	<header class="header">
+		<div class="topnav" id="myTopnav">
+			<a href="index.html">Daniela Morga</a>
+			<div>makeup artist</div>
+			<a href="index.html">Inicio</a>
+			<a href="galery.html">Galeria</a>
+			<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+			<i class="fa fa-bars"></i>
+			</a>
+		</div>
+	</header>
+
+
+	<script>
+		function myFunction() {
+		var x = document.getElementById("myTopnav");
+		if (x.className === "topnav") {
+		x.className += " responsive";
+		} else {
+		x.className = "topnav";
+		}
+		}
+	</script>
+
+
+
+</body>
+</html>

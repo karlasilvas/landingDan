@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+div a:nth-child(1){
+  grid-area: daniela;
+  position: absolute;
+  margin: 100px;
+  font-size: 40px;
+  font-family: 'Dancing Script', cursive;
+} 
+div:nth-child(2){
+  grid-area: mau;
+  position: absolute;
+  margin: 165px 0px 0px 170px;
+  font-size: 20px;
+  font-family: 'Dancing Script', cursive;
+  color: white;
+} 
+
+div a:nth-child(3){
+  grid-area: home;
+  position: absolute;
+  margin: 100px 0px 0px 1000px;
+  /*top, right, bottom, and left*/
+  font-size: 15px;
+  font-family: 'Raleway';
+}
+div a:nth-child(4){
+  grid-area: galeria;
+  position: absolute;
+  margin: 150px 0px 0px 1000px;
+  /*top, right, bottom, and left*/
+  font-size: 15px;
+  font-family: 'Raleway';
+}
+div a:nth-child(5){
+  grid-area: other;
+}
+
+.header{
+    background-image: url(imagenes/headermin1200.jpg);
+    height: 533px;
+  }
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+
+/*Color que se pone cuando pasas el mouse por el menú*/
+.topnav a:hover {
+  background-color: #fadde5;
+  color: black;
+}
+
+.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 100px;
+    top: 100px;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  div a:nth-child(1){
+    visibility: hidden;
+  }
+  div:nth-child(2){
+    visibility: hidden;
+  }
+}
